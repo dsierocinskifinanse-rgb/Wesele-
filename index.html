@@ -100,6 +100,14 @@
           <iframe id="mapChurch" src=""></iframe>
           <div style="margin-top:6px"><a id="mapChurchLink" href="#" target="_blank">Otwórz w Google Maps</a></div>
         </div>
+         function mapsEmbedUrl(address){
+      return "https://www.google.com/maps?q=" + encodeURIComponent(address) + "&output=embed";
+    }
+    document.getElementById('mapVenue').src = mapsEmbedUrl(CONFIG.venueAddress);
+    document.getElementById('mapChurch').src = mapsEmbedUrl(CONFIG.churchAddress);
+    document.getElementById('mapVenueLink').href = "https://maps.app.goo.gl/QSmG6Wm4gH35PZEaA" + encodeURIComponent(CONFIG.venueAddress);
+    document.getElementById('mapChurchLink').href = "https://maps.app.goo.gl/GycqTJP7MWSDnTBM6" + encodeURIComponent(CONFIG.churchAddress);
+
         <div>
           <strong>Sala weselna</strong>
           <iframe id="mapVenue" src=""></iframe>

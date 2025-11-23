@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="pl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Marta & Dawid — Informacje Weselne</title>
+  <style>
+    :root{
+      --maxw:880px;
+      --accent:#2b2b2b;
+      --gold:#c1a46d;
+      --bg:#faf9f7;
+      --card:#ffffff;
+    }
+    body{
+      font-family:"Georgia","Times New Roman",serif;
+      background:var(--bg);
+      margin:0;
+      color:var(--accent);
+    }
+    .wrap{max-width:var(--maxw);margin:32px auto;padding:20px}
+    .card{
+      background:var(--card);
+      border-radius:14px;
+      box-shadow:0 8px 20px rgba(0,0,0,0.07);
+      padding:28px;
+      margin-bottom:20px;
+      border:1px solid #e7e2da;
+    }
+    header{
+      text-align:center;
+      padding:20px 0 10px;
+    }
+    .initials{
+      font-family:"Great Vibes",serif;
+      font-size:4rem;
+      color:var(--accent);
+      letter-spacing:4px;
+    }
+    h1{
+      margin:0;
+      font-size:2rem;
+      font-weight:400;
+      color:var(--accent);
+    }
+    .sub{color:#6e6a64;font-size:1rem;margin-top:6px}
+    .details{font-size:1.05rem;line-height:1.7;margin-top:8px}
+    .label{font-size:0.9rem;color:#8b877f;margin-top:18px;text-transform:uppercase;letter-spacing:0.06em}
+    strong{color:var(--accent)}
+    .maps{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:12px}
+    @media(max-width:700px){
+      .wrap{margin:10px auto;padding:12px}
+      .card{padding:20px;border-radius:12px}
+      .initials{font-size:3rem}
+      h1{font-size:1.6rem}
+      .details{font-size:1rem}
+      .maps{grid-template-columns:1fr}
+      iframe{height:220px}
+    }
+    iframe{width:100%;height:250px;border:0;border-radius:10px}
+    button{
+      background:var(--gold);
+      color:white;
+      border:0;
+      padding:10px 16px;
+      border-radius:10px;
+      cursor:pointer;
+      font-weight:600;
+      margin-top:10px;
+    }
+    button.secondary{background:#ece7de;color:var(--accent)}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="card" style="text-align:center">
+      <div class="initials">M & D</div>
+      <h1>Marta & Dawid</h1>
+      <div class="sub">Serdecznie zapraszają na uroczystość zaślubin</div>
+      <div style="margin-top:10px;font-weight:600">6 czerwca 2026 • godz. 15:00 • Skierniewice</div>
+    </div>
+    <div class="card details">
+      <div class="label">Ceremonia</div>
+      <p><strong>Kościół Niepokalanego Serca Najświętszej Maryi Panny</strong><br>
+      ul. Armii Krajowej 4, Skierniewice</p>
+      <div class="label">Przyjęcie weselne</div>
+      <p><strong>Sala bankietowa Mediolan</strong><br>
+      Strzelcew 42A, Strzelcew</p>
+      <div class="label">Informacja o dzieciach</div>
+      <p>Wesele planowane jest w gronie dorosłych. Dzieci serdecznie zapraszamy na poprawiny.</p>
+      <div class="label">Dodaj do kalendarza</div>
+      <button id="downloadIcs">Pobierz plik .ics</button>
+      <button class="secondary" id="copyText">Kopiuj datę i godzinę</button>
+    </div>
+    <div class="card">
+      <div class="label">Mapy dojazdu</div>
+      <div class="maps">
+        <div>
+          <strong>Kościół</strong>
+          <iframe id="mapChurch" src=""></iframe>
+          <div style="margin-top:6px"><a id="mapChurchLink" href="#" target="_blank">Otwórz w Google Maps</a></div>
+        </div>
+        <div>
+          <strong>Sala weselna</strong>
+          <iframe id="mapVenue" src=""></iframe>
+          <div style="margin-top:6px"><a id="mapVenueLink" href="#" target="_blank">Otwórz w Google Maps</a></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
